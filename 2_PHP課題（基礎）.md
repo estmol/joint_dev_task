@@ -33,7 +33,8 @@ PHPの基礎力を高めることがプログラマーとしての生産性を�
 
 ```
 $names = ["田中", "佐藤", "佐々木", "高橋"];
-```
+array_push($names, "斎藤");
+print_r($names);
 
 期待する配列の出力
 
@@ -56,6 +57,8 @@ Array
 $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 ```
+$array = array_merge($array1,$array2);
+print_r($array);
 
 ## Q3. 次の配列の中に `3` がいくつあるかを出力するコードを書き，出力して下さい。
 
@@ -63,7 +66,13 @@ $array2 = ["bird", "bat", "tiger"];
 
 ```
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
-```
+$count = 0;
+ foreach($numbers as $number){
+     if($number == 3){
+         $count++;
+     }
+ }
+ echo "３の個数は、".$count."個です。\n";
 
 ## Q4. 次の配列から `null` の要素を削除し，出力して下さい。（新しい配列を作成せずに実現して下さい）
 
@@ -71,7 +80,9 @@ $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
 ```
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
-```
+$sports = array_filter($sports);
+print_r($sports);
+?>
 
 ## Q5. 配列が空であれば `true`，1つ以上の要素があれば `false` を出力するコードを書いて下さい。
 
